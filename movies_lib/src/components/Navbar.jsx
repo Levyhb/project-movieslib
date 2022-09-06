@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BiCameraMovie, BiSearchAlt } from "react-icons/bi";
 import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css';
+import '../Styles/components/Navbar.css';
 
 export default function Navbar() {
   const [search, setSearch] = useState();
