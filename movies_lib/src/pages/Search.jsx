@@ -29,7 +29,7 @@ export default function Search() {
   return (
     <div className="container">
       <h2 className="title">Results for: <span className="query-text">{query}</span></h2>
-      <div className="movie-container">
+      <div className="container-search">
       {movies.length === 0 && <Loading />}
       {movies && movies.map((movie) => (
         <MovieCard movie={ movie } key={ movie.id} />
