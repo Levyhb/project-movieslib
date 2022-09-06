@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { BsFillFileEarmarkTextFill, BsGraphUp, BsHourglassSplit, BsWallet2 } from "react-icons/bs";
 import MovieCard from '../components/MovieCard';
 import "../Styles/pages/MovieDetails.css";
+import { MdMovieCreation } from "react-icons/md"
 
 const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -29,7 +30,6 @@ export default function Movie() {
     const movieDetailUrl = `${moviesUrl}${id}?${apiKey}`;
     getMovieDetails(movieDetailUrl)
   }, []);
-
 
   return (
     <div className="movie-page">
@@ -60,6 +60,12 @@ export default function Movie() {
               <BsFillFileEarmarkTextFill /> Description
             </h3>
             <p className="description">{movie.overview}</p>
+          </div>
+          <div className='info'>
+            <h3>
+              <MdMovieCreation /> Genre
+            </h3>
+            <div  className='genre'>{movie.genres.filter((e) => e.id).map((element) => (<p>{element.name}</p>)) }</div>
           </div>
         </div>
       )}

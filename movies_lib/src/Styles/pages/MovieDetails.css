@@ -15,6 +15,10 @@
   text-align: center;
 }
 
+.movie-page .movie-card:hover {
+  box-shadow: 0 0 0;
+}
+
 .movie-page .movie-card img,
 .movie-page .movie-card h2,
 .movie-page .movie-card p {
@@ -55,4 +59,12 @@
 
 .description {
   line-height: 1.4rem;
+}
+
+.genre {
+  display: flex;
+}
+
+.genre p {
+  padding-right: 0.5rem;
 }
