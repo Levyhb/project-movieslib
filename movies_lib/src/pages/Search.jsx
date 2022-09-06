@@ -11,7 +11,7 @@ export default function Search() {
   const [searchParams] = useSearchParams();
 
   const [movies, setMovies] = useState([]);
-  const query = searchParams.get("q")
+  const query = searchParams.get(`q`)
 
   const getSearchedMovies = async (url) => {
     const response = await fetch(url);
@@ -28,8 +28,8 @@ export default function Search() {
 
   return (
     <div className="container">
-      <h2 className="title">Results for: <span className="query-text">{query}</span></h2>
-      <div className="container-search">
+      <h2 className="title-search">Results for: <span className="query-text">{query}</span></h2>
+      <div className="container-grid">
       {movies.length === 0 && <Loading />}
       {movies && movies.map((movie) => (
         <MovieCard movie={ movie } key={ movie.id} />

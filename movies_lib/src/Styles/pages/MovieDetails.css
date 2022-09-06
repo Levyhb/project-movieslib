@@ -1,4 +1,4 @@
-.movie-page {
+.movie-page .movie-info {
   color: #FFF;
   display: flex;
   flex-direction: column;
@@ -67,4 +67,40 @@
 
 .genre p {
   padding-right: 0.5rem;
+}
+
+.movie-page .container-grid .movie-card {
+  width: 30%;
+}
+
+.movie-page .movie-card img, .movie-page .movie-card h2, .movie-page .movie-card p, h2 {
+  margin-bottom: .3rem;
+}
+
+.container .similar-movie-title {
+  margin-top: 6rem;
+}
+
+.movie-page .similar-movies h2 {
+  font-size: 1.5rem;
+}
+
+.movie-page .similar-movies img {
+  max-height: 420px;
+}
+
+
+.back-to-home {
+  font-size: 2rem;
+  color: #FFF;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.back-to-home a {
+  color: white;
+}
+
+.back-to-home a:hover {
+  text-decoration: underline;
 }
