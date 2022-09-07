@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const imageUrl = import.meta.env.VITE_IMG;
 
 
+
 const MovieCard = ({ movie, showLink = true }) => {
   return (
     <div className="movie-card">
@@ -13,7 +14,7 @@ const MovieCard = ({ movie, showLink = true }) => {
       <p>
         <FaStar className="star-icon"/> {(movie.vote_average).toFixed(1)}
       </p>
-        {showLink && <div><Link to={`/movie/${movie.id}`}>Details</Link></div>}
+        {showLink && <div onClick="window.location.refresh"><Link to={`/movie/${movie.id}`}>Details</Link></div>}
     </div>
   )
 }
