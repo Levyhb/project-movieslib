@@ -14,6 +14,13 @@ export default function Movie() {
   const { id } = useParams();
   const [movie, setMovie] = useState();
   const [cast, setCast] = useState();  
+  
+  const getCast = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    setCast(data);
+  }
 
   const getMovieDetails = async (url) => {
     const response = await fetch(url);
@@ -22,12 +29,6 @@ export default function Movie() {
     setMovie(data);
   }
 
-  const getCast = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    setCast(data);
-  }
 
   const formatCurrency = (number) => {
     return number.toLocaleString("en-US", {
@@ -39,8 +40,8 @@ export default function Movie() {
   useEffect(() => {
     const movieDetailUrl = `${moviesUrl}${id}?${apiKey}`;
     const castMovie = `${moviesUrl}${id}/casts?${apiKey}`
-    getMovieDetails(movieDetailUrl);
     getCast(castMovie)
+    getMovieDetails(movieDetailUrl);
   }, []);
   
 
