@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import { BsFillFileEarmarkTextFill, BsGraphUp, BsHourglassSplit, BsWallet2 } from "react-icons/bs";
+import { BsFillFileEarmarkTextFill, BsFillPersonFill, BsGraphUp, BsHourglassSplit, BsWallet2 } from "react-icons/bs";
 import MovieCard from '../components/MovieCard';
 import "../Styles/pages/MovieDetails.css";
 import { MdMovieCreation } from "react-icons/md"
@@ -13,15 +13,20 @@ const apiKey = import.meta.env.VITE_API_KEY;
 export default function Movie() {
   const { id } = useParams();
   const [movie, setMovie] = useState();
-
-  // const [searchParams] = useSearchParams([]);
-  // const query = searchParams.get('/')
+  const [cast, setCast] = useState();  
 
   const getMovieDetails = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
 
     setMovie(data);
+  }
+
+  const getCast = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    setCast(data);
   }
 
   const formatCurrency = (number) => {
@@ -33,8 +38,11 @@ export default function Movie() {
 
   useEffect(() => {
     const movieDetailUrl = `${moviesUrl}${id}?${apiKey}`;
-    getMovieDetails(movieDetailUrl)
+    const castMovie = `${moviesUrl}${id}/casts?${apiKey}`
+    getMovieDetails(movieDetailUrl);
+    getCast(castMovie)
   }, []);
+  
 
   return (
     <div className="movie-page">
@@ -44,6 +52,18 @@ export default function Movie() {
             <MovieCard movie={movie} showLink={false} />
             <p className='tagline'>{movie.tagline}</p>
             <div className='info'>
+            <div className="info">
+              <h3>
+                <BsFillPersonFill /> Cast
+              </h3>
+            <div className='list-movies'>
+                {
+                  (cast.cast.map((e) => e.name).slice(0,5).map((element) => (
+                    <p>{element}</p>
+                  )))
+                }
+            </div>
+            </div>
               <h3>
                 <BsWallet2 /> Budget
               </h3>
@@ -71,7 +91,8 @@ export default function Movie() {
               <h3>
                 <MdMovieCreation /> Genre
               </h3>
-              <div  className='genre'>{movie.genres.filter((e) => e.id).map((element) => (<p>{element.name}</p>)) }</div>
+              <div  className='list-movies'>{movie.genres.filter((e) => e.id).map((element) => (<p>{element.name}</p>)) }
+            </div>
             </div>
           </div>
           <div className='container'>

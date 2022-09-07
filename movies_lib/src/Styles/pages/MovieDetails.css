@@ -61,11 +61,11 @@
   line-height: 1.4rem;
 }
 
-.genre {
+.list-movies {
   display: flex;
 }
 
-.genre p {
+.list-movies p {
   padding-right: 0.5rem;
 }
 
