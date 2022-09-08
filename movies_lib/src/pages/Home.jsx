@@ -7,8 +7,8 @@ import NowPlayingMovies from '../components/NowPlayingMovies';
 import UpcomingMovies from '../components/UpcomingMovies';
 
 
-
 export default function Home() {
+
   const carouselTopMov = useRef(null);
   const carouselPopMov = useRef(null)
   const carouselNowPlayMov = useRef(null)
@@ -71,6 +71,7 @@ export default function Home() {
           <button className='arrow right' onClick={ (e) => handleRightClick(e, carouselUpcomingMov) }><img src={arrow} alt="arrow-icon"/></button>
         </div>
       </div>
+
     </div>
   )
 }

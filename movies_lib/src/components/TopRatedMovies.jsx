@@ -6,7 +6,7 @@ const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
 export default function TopRatedMovies() {
-  const [topMovies, setTopMovies] = useState([])
+  const [topMovies, setTopMovies] = useState([]);
 
   const getTopRatedMovies = async (url) => {
     const response = await fetch(url);
@@ -15,14 +15,13 @@ export default function TopRatedMovies() {
   }
 
   useEffect(() => {
-    const topRatedUrl = `${moviesUrl}top_rated?${apiKey}`
-    getTopRatedMovies(topRatedUrl)
+    const topRatedUrl = `${moviesUrl}top_rated?${apiKey}`;
+    getTopRatedMovies(topRatedUrl);
   }, []);
 
   return (
     <>
-    {topMovies.length === 0 && <Loading />}
-      {topMovies && topMovies.map((movie) => (
+      { topMovies.map((movie) => (
         <MovieCard movie={ movie } key={ movie.id} />
       ))}
     </>
