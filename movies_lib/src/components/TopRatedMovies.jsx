@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Loading from './Loading';
 import MovieCard from './MovieCard';
 
 const moviesUrl = import.meta.env.VITE_API;

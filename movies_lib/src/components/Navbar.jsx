@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { BiCameraMovie, BiSearchAlt } from "react-icons/bi";
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/components/Navbar.css';

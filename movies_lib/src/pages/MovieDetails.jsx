@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BsFillFileEarmarkTextFill, BsFillPersonFill, BsGraphUp, BsHourglassSplit, BsWallet2 } from "react-icons/bs";
 import "../Styles/pages/MovieDetails.css";
 import MovieCard from '../components/MovieCard';
