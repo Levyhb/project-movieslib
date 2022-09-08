@@ -61,10 +61,13 @@ export default function Movie() {
                 </h3>
                 <div className='list-movies'>
                   {
-                    console.log(cast.cast.filter((e) => e.department === "directing"))
+                    cast.crew.filter((e) => e.job === "Director").map((director) => (
+                      <p>{director.name}</p>
+                    ))
                   }
                 </div>
               </div>
+
               <div className="info">
                 <h3>
                   <BsFillPersonFill /> Cast
@@ -77,37 +80,47 @@ export default function Movie() {
                   }
                 </div>
               </div>
+
+              <div className='info'>
                 <h3>
-                  <BsWallet2 /> Budget
+                  <MdMovieCreation /> Genre
                 </h3>
-                <p>{formatCurrency(movie.budget)}</p>
+                <div className='list-movies'>
+                  {movie.genres.filter((e) => e.id).map((element) => (<p>{element.name}</p>)) }
+                </div>
               </div>
-              <div className="info">
+
+              <div className='info'>
                 <h3>
-                  <BsGraphUp />  Revenue
+                  <BsFillFileEarmarkTextFill /> Description
                 </h3>
-                <p>{formatCurrency(movie.revenue)}</p>
+                <h4 className="release-date">Release Date: ({(movie.release_date)})</h4>
+                <p className="description">{movie.overview}</p>
               </div>
+
               <div className="info description">
                 <h3>
                   <BsHourglassSplit /> Durability
                 </h3>
                 <p>{movie.runtime} minutes</p>
               </div>
-              <div className='info'>
+
+              <div className="info">
                 <h3>
-                  <BsFillFileEarmarkTextFill /> Description
+                  <BsWallet2 /> Budget
                 </h3>
-                <p className="description">{movie.overview}</p>
+                <p>{formatCurrency(movie.budget)}</p>
               </div>
-              <div className='info'>
+
+              <div className="info">
                 <h3>
-                  <MdMovieCreation /> Genre
+                  <BsGraphUp />  Revenue
                 </h3>
-                <div  className='list-movies'>{movie.genres.filter((e) => e.id).map((element) => (<p>{element.name}</p>)) }
+                <p>{formatCurrency(movie.revenue)}</p>
               </div>
-            </div>
+
           </div>
+        </div>
           <div className='container'>
             <h2 className='title similar-movie-title'>See others movies similiar to <span className='query-text'>{movie.title}</span></h2>
             <div className='container-grid similar-movies'>
