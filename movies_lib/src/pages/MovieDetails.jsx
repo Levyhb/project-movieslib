@@ -62,7 +62,7 @@ export default function Movie() {
                 <div className='list-movies'>
                   {
                     cast.crew.filter((e) => e.job === "Director").map((director) => (
-                      <p>{director.name}</p>
+                      <p key={ director.id }>{director.name}</p>
                     ))
                   }
                 </div>
@@ -75,7 +75,7 @@ export default function Movie() {
                 <div className='list-movies'>
                   {
                     (cast.cast.map((e) => e.name).slice(0,5).map((element) => (
-                      <p>{element}</p>
+                      <p key={ element.id }>{element}</p>
                     )))
                   }
                 </div>
@@ -86,7 +86,7 @@ export default function Movie() {
                   <MdMovieCreation /> Genre
                 </h3>
                 <div className='list-movies'>
-                  {movie.genres.filter((e) => e.id).map((element) => (<p>{element.name}</p>)) }
+                  {movie.genres.filter((e) => e.id).map((element) => (<p key={ element.id }>{element.name}</p>)) }
                 </div>
               </div>
 
