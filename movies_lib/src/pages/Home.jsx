@@ -4,6 +4,7 @@ import TopRatedMovies from '../components/TopRatedMovies';
 import PopularMovies from '../components/PopularMovies';
 import arrow from "../img/arrow.png";
 import NowPlayingMovies from '../components/NowPlayingMovies';
+import UpcomingMovies from '../components/UpcomingMovies';
 
 
 
@@ -11,6 +12,8 @@ export default function Home() {
   const carouselTopMov = useRef(null);
   const carouselPopMov = useRef(null)
   const carouselNowPlayMov = useRef(null)
+  const carouselUpcomingMov = useRef(null)
+
   
   const handleLeftClick = (e, ref) => {
     e.preventDefault();
@@ -55,6 +58,17 @@ export default function Home() {
         <div className="buttons">
           <button className='arrow left' onClick={ (e) => handleLeftClick(e, carouselNowPlayMov) }><img src={arrow} alt="arrow-icon"/></button>
           <button className='arrow right' onClick={ (e) => handleRightClick(e, carouselNowPlayMov) }><img src={arrow} alt="arrow-icon"/></button>
+        </div>
+      </div>
+
+      <div className="movie-container">
+        <h2 className="title">Upcoming Movies</h2>
+        <div className="carousel" ref={carouselUpcomingMov}>
+          <UpcomingMovies />
+        </div>
+        <div className="buttons">
+          <button className='arrow left' onClick={ (e) => handleLeftClick(e, carouselUpcomingMov) }><img src={arrow} alt="arrow-icon"/></button>
+          <button className='arrow right' onClick={ (e) => handleRightClick(e, carouselUpcomingMov) }><img src={arrow} alt="arrow-icon"/></button>
         </div>
       </div>
     </div>

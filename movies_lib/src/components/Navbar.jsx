@@ -21,7 +21,7 @@ export default function Navbar() {
       <h2>
         <Link to="/">
           <BiCameraMovie />
-          MoviesLib
+          Movies_Lib
         </Link>
       </h2>
       <form onSubmit={navigateBtn}>
