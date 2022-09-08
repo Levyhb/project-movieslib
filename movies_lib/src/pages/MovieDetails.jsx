@@ -6,6 +6,7 @@ import "../Styles/pages/MovieDetails.css";
 import { MdMovieCreation } from "react-icons/md"
 import SimilarMovies from '../components/SimilarMovies';
 import { AiOutlineRollback } from "react-icons/ai";
+import Loading from '../components/Loading';
 
 const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -40,14 +41,14 @@ export default function Movie() {
   useEffect(() => {
     const movieDetailUrl = `${moviesUrl}${id}?${apiKey}`;
     const castMovie = `${moviesUrl}${id}/casts?${apiKey}`
-    getCast(castMovie)
+    getCast(castMovie);
     getMovieDetails(movieDetailUrl);
   }, []);
   
 
   return (
     <div className="movie-page">
-      {movie && (
+      {movie && cast ?(
         <div>
           <div className='movie-info'>
             <MovieCard movie={movie} showLink={false} />
@@ -104,7 +105,7 @@ export default function Movie() {
             <h3 className='back-to-home'><Link to="/">Back to Home <AiOutlineRollback /></Link></h3>
           </div>
         </div>
-      )}
+      ): <Loading />}
     </div>
   )
 }
