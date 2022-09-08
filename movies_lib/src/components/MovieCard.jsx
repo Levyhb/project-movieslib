@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 const imageUrl = import.meta.env.VITE_IMG;
 
-
-
 const MovieCard = ({ movie, showLink = true }) => {
   return (
     <div className="movie-card">
