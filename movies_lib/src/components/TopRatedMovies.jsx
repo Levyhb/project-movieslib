@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import MovieCard from './MovieCard';
+import React, { useEffect, useState } from "react";
+import MovieCard from "./MovieCard";
 
 const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -11,7 +11,7 @@ export default function TopRatedMovies() {
     const response = await fetch(url);
     const data = await response.json();
     setTopMovies(data.results);
-  }
+  };
 
   useEffect(() => {
     const topRatedUrl = `${moviesUrl}top_rated?${apiKey}`;
@@ -20,9 +20,9 @@ export default function TopRatedMovies() {
 
   return (
     <>
-      { topMovies.map((movie) => (
-        <MovieCard movie={ movie } key={ movie.id} />
+      {topMovies.map((movie) => (
+        <MovieCard movie={movie} key={movie.id} />
       ))}
     </>
-  )
+  );
 }
