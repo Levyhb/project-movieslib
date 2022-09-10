@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Home from './Home';
 import "../Styles/pages/NotFound.css";
 import johnTravoltaGif from "../img/john-travolta-GIF.gif"
-import { BiHome } from 'react-icons/bi';
 import { FaHome } from 'react-icons/fa';
 
 export default function NotFound() {
@@ -13,7 +12,7 @@ export default function NotFound() {
         <h2>ERROR 404</h2>
         <h3>page not found</h3>
       </div>
-      <Link to={ <Home /> }>Voltar para Home <FaHome/></Link>
+      <Link to="/">Voltar para Home <FaHome/></Link>
       <img src={johnTravoltaGif} alt="john travolta gif" />
     </div>
   )

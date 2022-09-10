@@ -119,8 +119,8 @@ export default function Movie() {
                 <p>{formatCurrency(movie.revenue)}</p>
               </div>
 
+            </div>
           </div>
-        </div>
           <div className='container'>
             <h2 className='title similar-movie-title'>See others movies similiar to <span className='query-text'>{movie.title}</span></h2>
             <div className='container-grid similar-movies'>
