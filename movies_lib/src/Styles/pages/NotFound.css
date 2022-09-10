@@ -1,0 +1,42 @@
+.not-found-page {
+  height: 100vh;
+}
+
+.not-found-page .error-message {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+}
+
+.not-found-page .error-message h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+
+.not-found-page .error-message h3 {
+
+}
+
+.not-found-page a {
+  display: flex;
+  font-size: 2rem;
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  
+}
+
+.not-found-page a:hover {
+  text-decoration: underline;
+}
+
+.not-found-page a svg{
+  padding-left: 4px;
+}
+
+.not-found-page img {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}

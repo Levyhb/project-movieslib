@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b gh-pages -r git@github.com:Levyhb/project-movieslib/movies_lib.git"
   },
   "dependencies": {
     "gh-pages": "^4.0.0",

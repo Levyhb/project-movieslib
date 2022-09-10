@@ -6,8 +6,8 @@ import MovieCard from '../components/MovieCard';
 import SimilarMovies from '../components/SimilarMovies';
 import Loading from '../components/Loading';
 import { MdMovieCreation } from "react-icons/md"
-import { AiOutlineRollback } from "react-icons/ai";
 import { GiDirectorChair } from "react-icons/gi";
+import { FaHome } from 'react-icons/fa';
 
 const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -126,7 +126,7 @@ export default function Movie() {
             <div className='container-grid similar-movies'>
               <SimilarMovies />
             </div>
-            <h3 className='back-to-home'><Link to="/">Back to Home <AiOutlineRollback /></Link></h3>
+            <h3 className='back-to-home'><Link to="/">Back to Home <FaHome /></Link></h3>
           </div>
         </div>
       ): <Loading />}
