@@ -1,0 +1,40 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: .5rem 0;
+}
+
+.social-list li {
+  margin: 0.2rem 1rem;
+}
+
+.social-list li a svg path:hover {
+  color: #f7d354;
+}
+
+.social-list svg {
+  cursor: pointer;
+}
+
+.social-list svg {
+  height: 25px;
+  width: 23px;
+}
+
+.movie-lib-footer {
+  cursor: pointer;
+  color: #f7d354;
+}
+
+.developed a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
