@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Home from "./Home";
 import "../Styles/pages/NotFound.css";
 import johnTravoltaGif from "../img/john-travolta-GIF.gif";
 import { FaHome } from "react-icons/fa";
