@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loading from "./Loading";
 import MovieCard from "./MovieCard";
 
 const moviesUrl = import.meta.env.VITE_API;
@@ -20,7 +21,7 @@ export default function TopRatedMovies() {
 
   return (
     <>
-      {topMovies.map((movie) => (
+      { topMovies.length === 0 ? <Loading /> : topMovies.map((movie) => (
         <MovieCard movie={movie} key={movie.id} />
       ))}
     </>

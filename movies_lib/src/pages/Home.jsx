@@ -21,7 +21,7 @@ export default function Home() {
     e.preventDefault();
     ref.current.scrollLeft += ref.current.offsetWidth;
   };
-
+  
   return (
     <div className="container">
       <div className="movie-container">

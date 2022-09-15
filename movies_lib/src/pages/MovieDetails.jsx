@@ -14,6 +14,7 @@ import Loading from "../components/Loading";
 import { MdMovieCreation } from "react-icons/md";
 import { GiDirectorChair } from "react-icons/gi";
 import { FaHome } from "react-icons/fa";
+import Footer from "../components/Footer";
 
 const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -145,6 +146,7 @@ export default function Movie() {
               </Link>
             </h3>
           </div>
+          <Footer />
         </div>
       ) : (
         <Loading />
