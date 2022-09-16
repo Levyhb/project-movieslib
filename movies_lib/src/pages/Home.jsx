@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import "../Styles/pages/MovieGrid.css";
 import TopRatedMovies from "../components/TopRatedMovies";
 import PopularMovies from "../components/PopularMovies";
-import arrow from "../img/arrow.png";
 import NowPlayingMovies from "../components/NowPlayingMovies";
 import UpcomingMovies from "../components/UpcomingMovies";
+import ArrowsMov from "../components/ArrowsMov";
 
 export default function Home() {
   const carouselTopMov = useRef(null);
@@ -19,6 +19,7 @@ export default function Home() {
 
   const handleRightClick = (e, ref) => {
     e.preventDefault();
+    console.log(ref)
     ref.current.scrollLeft += ref.current.offsetWidth;
   };
 
@@ -29,20 +30,7 @@ export default function Home() {
         <div className="carousel" ref={carouselTopMov}>
           <TopRatedMovies />
         </div>
-        <div className="buttons">
-          <button
-            className="arrow left"
-            onClick={(e) => handleLeftClick(e, carouselTopMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-          <button
-            className="arrow right"
-            onClick={(e) => handleRightClick(e, carouselTopMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-        </div>
+        <ArrowsMov carousel={carouselTopMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
       </div>
 
       <div className="movie-container">
@@ -50,20 +38,7 @@ export default function Home() {
         <div className="carousel" ref={carouselPopMov}>
           <PopularMovies />
         </div>
-        <div className="buttons">
-          <button
-            className="arrow left"
-            onClick={(e) => handleLeftClick(e, carouselPopMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-          <button
-            className="arrow right"
-            onClick={(e) => handleRightClick(e, carouselPopMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-        </div>
+        <ArrowsMov carousel={carouselPopMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
       </div>
 
       <div className="movie-container">
@@ -71,20 +46,7 @@ export default function Home() {
         <div className="carousel" ref={carouselNowPlayMov}>
           <NowPlayingMovies />
         </div>
-        <div className="buttons">
-          <button
-            className="arrow left"
-            onClick={(e) => handleLeftClick(e, carouselNowPlayMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-          <button
-            className="arrow right"
-            onClick={(e) => handleRightClick(e, carouselNowPlayMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-        </div>
+        <ArrowsMov carousel={carouselNowPlayMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
       </div>
 
       <div className="movie-container">
@@ -92,20 +54,7 @@ export default function Home() {
         <div className="carousel" ref={carouselUpcomingMov}>
           <UpcomingMovies />
         </div>
-        <div className="buttons">
-          <button
-            className="arrow left"
-            onClick={(e) => handleLeftClick(e, carouselUpcomingMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-          <button
-            className="arrow right"
-            onClick={(e) => handleRightClick(e, carouselUpcomingMov)}
-          >
-            <img src={arrow} alt="arrow-icon" />
-          </button>
-        </div>
+        <ArrowsMov carousel={carouselUpcomingMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
       </div>
     </div>
   );

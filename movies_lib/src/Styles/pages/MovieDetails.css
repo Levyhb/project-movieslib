@@ -29,7 +29,7 @@
   font-size: 2rem;
 }
 
-.movie-page svg path {
+.movie-page .info svg path {
   color: #f7d354;
 }
 
