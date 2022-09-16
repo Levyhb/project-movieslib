@@ -19,7 +19,7 @@
   font-size: 2rem;
   position: absolute;
   top: 70%;
-  left: 10%;
+  left: 20%;
   
 }
 
@@ -33,6 +33,6 @@
 
 .not-found-page img {
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 50%;
 }
