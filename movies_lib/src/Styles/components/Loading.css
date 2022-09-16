@@ -104,3 +104,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .lds-roller {
+    left: 40%;
+  }
+}

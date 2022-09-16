@@ -232,4 +232,7 @@
     flex-wrap: wrap;
   }
 
+  .arrow {
+    display:none;
+  }
 }
