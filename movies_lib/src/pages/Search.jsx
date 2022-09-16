@@ -21,7 +21,7 @@ export default function Search() {
   };
 
   useEffect(() => {
-    const searchWithQueryURL = `${searchUrl}?${apiKey}&query=${query}`;
+    const searchWithQueryURL = `https://api.themoviedb.org/3/search/movie?${apiKey}&query=${query}`;
     getSearchedMovies(searchWithQueryURL);
   }, [query]);
 
