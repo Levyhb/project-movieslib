@@ -232,7 +232,17 @@
     flex-wrap: wrap;
   }
 
-  .arrow {
-    display:none;
+  .arrow img {
+    height: 45px;
+    width: 40px;
+    opacity: 0.7;
+  }
+
+  .left {
+    left: 5%;
+  }
+
+  .right {
+    right: 5%;
   }
 }
