@@ -15,6 +15,8 @@
 - Git
 - React.js
 
+#### Responsividade: ☑️
+
 ## Autores
 
 - [@Levyhb](https://github.com/Levyhb)
