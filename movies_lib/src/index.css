@@ -6,16 +6,21 @@
   color: white;
 }
 
+:root {
+  --primary-light: #F7d354;
+  --primary-dark: #b8930c;
+}
+
 body {
   background-color: #000
 }
 
 a {
   text-decoration: none;
-  color: #F7d354;
+  color: var(--primary-light);
   transition: .5s;
 }
 
 a:hover {
-  color: #b8930c;
+  color: var(--primary-dark);
 }

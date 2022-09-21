@@ -12,7 +12,7 @@
 }
 
 .lds-roller div:after {
-  background: #f7d354;
+  background: var(--primary-light);
   border-radius: 50%;
   content: '';
   display: block;

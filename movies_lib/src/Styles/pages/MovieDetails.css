@@ -8,7 +8,7 @@
 
 .movie-page svg {
   font-size: 1.5rem;
-  color: #f7d354;
+  color: var(--primary-light);
 }
 
 .movie-page .movie-card {
@@ -30,7 +30,7 @@
 }
 
 .movie-page .info svg path {
-  color: #f7d354;
+  color: var(--primary-light);
 }
 
 .movie-page .movie-card p {

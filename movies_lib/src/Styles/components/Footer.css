@@ -21,7 +21,7 @@
 }
 
 .social-list li a svg path:hover {
-  color: #f7d354;
+  color: var(--primary-light);
 }
 
 .social-list svg {
@@ -35,7 +35,7 @@
 
 .movie-lib-footer {
   cursor: pointer;
-  color: #f7d354;
+  color: var(--primary-light);
 }
 
 .developed a:hover {
