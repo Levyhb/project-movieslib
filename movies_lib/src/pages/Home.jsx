@@ -12,17 +12,6 @@ export default function Home() {
   const carouselNowPlayMov = useRef(null);
   const carouselUpcomingMov = useRef(null);
 
-  const handleLeftClick = (e, ref) => {
-    e.preventDefault();
-    ref.current.scrollLeft -= ref.current.offsetWidth;
-  };
-
-  const handleRightClick = (e, ref) => {
-    e.preventDefault();
-    console.log(ref)
-    ref.current.scrollLeft += ref.current.offsetWidth;
-  };
-
   return (
     <div className="container">
       <div className="movie-container">
@@ -30,7 +19,7 @@ export default function Home() {
         <div className="carousel" ref={carouselTopMov}>
           <TopRatedMovies />
         </div>
-        <ArrowsMov carousel={carouselTopMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
+        <ArrowsMov carousel={carouselTopMov} />
       </div>
 
       <div className="movie-container">
@@ -38,7 +27,7 @@ export default function Home() {
         <div className="carousel" ref={carouselPopMov}>
           <PopularMovies />
         </div>
-        <ArrowsMov carousel={carouselPopMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
+        <ArrowsMov carousel={carouselPopMov} />
       </div>
 
       <div className="movie-container">
@@ -46,7 +35,7 @@ export default function Home() {
         <div className="carousel" ref={carouselNowPlayMov}>
           <NowPlayingMovies />
         </div>
-        <ArrowsMov carousel={carouselNowPlayMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
+        <ArrowsMov carousel={carouselNowPlayMov} />
       </div>
 
       <div className="movie-container">
@@ -54,7 +43,7 @@ export default function Home() {
         <div className="carousel" ref={carouselUpcomingMov}>
           <UpcomingMovies />
         </div>
-        <ArrowsMov carousel={carouselUpcomingMov} handleLeftClick={ handleLeftClick } handleRightClick={ handleRightClick }/>
+        <ArrowsMov carousel={carouselUpcomingMov} />
       </div>
     </div>
   );
